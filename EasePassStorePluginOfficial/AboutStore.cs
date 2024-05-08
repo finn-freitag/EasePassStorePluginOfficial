@@ -13,9 +13,9 @@ namespace EasePassStorePluginOfficial
 
         public string PluginDescription => "Adds plugin store functionality to Ease Pass.";
 
-        public string PluginAuthor => "Ease Pass Team, Finn Freitag";
+        public string PluginAuthor => "Ease Pass Team";
 
-        public string PluginAuthorURL => "https://finnfreitag.com/";
+        public string PluginAuthorURL => "https://github.com/FrozenAssassine/EasePass";
 
         public Uri PluginIcon => Icon.GetIconUri();
     }

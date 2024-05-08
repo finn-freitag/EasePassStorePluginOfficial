@@ -11,18 +11,14 @@ namespace EasePassStorePluginOfficial
     public class ExtensionSource : IExtensionSource
     {
         public string SourceName => "Official Ease Pass Store";
-        public bool UseAsync => true;
 
         public (Uri Source, string Name)[] GetExtensionSources()
         {
-            throw new NotImplementedException();
-        }
-
-        public async Task<(Uri Source, string Name)[]> GetExtensionSourcesAsync()
-        {
             string url = "https://github.com/FrozenAssassine/EasePass/raw/master/Plugins/PluginList.txt";
 
-            var result = await MakeRequest(url);
+            var task = Task.Run(() => MakeRequest(url));
+            task.Wait();
+            var result = task.Result;
             if (!result.success)
                 return new (Uri, string)[0];
 
